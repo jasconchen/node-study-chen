@@ -1,24 +1,17 @@
-/*
-* @Author: USER
-* @Date:   2016-07-03 11:22:13
-* @Last Modified by:   USER
-* @Last Modified time: 2016-07-03 11:31:13
-*/
+var http = require('http');
 
-'use strict';
+var hostname = '127.0.0.1';
+var port = 3000;
 
-const http = require('http');
+// req [请求体]
+// res [响应体]
 
-const hostname = '127.0.0.1';
-const port = 3000;
-
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World and NodeJs\n');
+var server = http.createServer(function(req, res) {
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/plain');
+    res.end('Hello World and NodeJs\n');
 });
 
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
+server.listen(port, hostname, function() {
+    console.log(`Server running at http://${hostname}:${port}/`);
 });
-    
