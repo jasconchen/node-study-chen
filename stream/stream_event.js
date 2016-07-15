@@ -22,7 +22,7 @@ readStream
     })
     .on('end', function(){
         console.log(n)
-        console.log('data end')
+        console.log('data ends')
     })
     .on('close', function(){
         console.log('data close')
